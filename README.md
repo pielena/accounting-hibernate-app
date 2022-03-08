@@ -1,0 +1,1 @@
+Company accounting hibernate application
