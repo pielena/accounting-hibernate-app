@@ -39,9 +39,8 @@ public class PaymentDaoImpl implements PaymentDao {
     @Override
     public List<Payment> findAllByContract(Long contractId) {
         return performReturningWithinPersistenceContext(em ->
-                em
-                        .createQuery("select p from Payment p where p.contract.id = :contract_id", Payment.class)
-                        .setParameter("contract_id", contractId)
+                em.createQuery("select p from Payment p where p.contract.id = :contractId", Payment.class)
+                        .setParameter("contractId", contractId)
                         .getResultList()
         );
     }
@@ -49,9 +48,8 @@ public class PaymentDaoImpl implements PaymentDao {
     @Override
     public List<Payment> findAllByCustomer(Long customerId) {
         return performReturningWithinPersistenceContext(em ->
-                em
-                        .createQuery("select p from Payment p join fetch p.contract where p.contract.customer.id = :customer_id", Payment.class)
-                        .setParameter("customer_id", customerId)
+                em.createQuery("select p from Payment p join fetch p.contract where p.contract.customer.id = :customerId", Payment.class)
+                        .setParameter("customerId", customerId)
                         .getResultList()
         );
     }
@@ -59,10 +57,9 @@ public class PaymentDaoImpl implements PaymentDao {
     @Override
     public List<Payment> findAllAmountMoreThan(Long customerId, BigDecimal amount) {
         return performReturningWithinPersistenceContext(em ->
-                em
-                        .createQuery("select p from Payment p join fetch p.contract where p.contract.customer.id = :customer_id and p.amountOfMoney > :amount_of_money", Payment.class)
-                        .setParameter("customer_id", customerId)
-                        .setParameter("amount_of_money", amount)
+                em.createQuery("select p from Payment p join fetch p.contract where p.contract.customer.id = :customerId and p.moneyAmount > :moneyAmount", Payment.class)
+                        .setParameter("customerId", customerId)
+                        .setParameter("moneyAmount", amount)
                         .getResultList()
         );
     }
