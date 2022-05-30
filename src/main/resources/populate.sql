@@ -1,20 +1,20 @@
 INSERT INTO customer
-VALUES (1, 'CustomerName1', 'CustomerAddress1', 1);
-VALUES (2, 'CustomerName2', 'CustomerAddress2', 2);
-VALUES (3, 'CustomerName3', 'CustomerAddress3', 3);
-VALUES (4, 'CustomerName4', 'CustomerAddress4', 4);
-VALUES (5, 'CustomerName5', 'CustomerAddress5', 5);
+VALUES (1, 'Mars Inc', '6885 Elm Street, McLean, Virginia 22101, United States', 19823558),
+       (2, 'Ferrero Co', 'Zona Ind. Pianodardina 83100 Avellino, Italy', 20934869),
+       (3, 'Hershey', '100 Crystal A Dr, Hershey, PA 17033, USA', 37824587),
+       (4, 'LINDT & SPRUNGLI (U.K.) LIMITED', '4717 Grand Avenue, Suite 700, Kansas City, MO 64112, USA', 42389878),
+       (5, 'Nestle', 'Nestle S.A., avenue Nestle 55, 1800 Vevey, Switzerland', 52350981);
 
 INSERT INTO contract
-VALUES (1, 'ContractName1', 'ContractSubject1', 10000, 'ContractComment1', '2022-01-23', 1);
-VALUES (2, 'ContractName2', 'ContractSubject2', 20000, 'ContractComment2', '2022-02-22', 1);
-VALUES (3, 'ContractName3', 'ContractSubject3', 30000, 'ContractComment3', '2022-03-23', 1);
-VALUES (4, 'ContractName4', 'ContractSubject4', 40000, 'ContractComment4', '2022-04-24', 2);
-VALUES (5, 'ContractName5', 'ContractSubject5', 50000, 'ContractComment5', '2022-05-25', 2);
+VALUES (1, 'Delivery contract 132', 'Sugar', 100000, '30% prepayment, fixed 5% discount', '2022-01-23', 1),
+       (2, 'Delivery contract 133', 'Milk Powder', 200000, '30% prepayment, fixed 5% discount', '2022-02-22', 1),
+       (3, 'Delivery contract 134', 'Cocoa', 300000, '30% prepayment, fixed 5% discount', '2022-03-12', 1),
+       (4, 'Delivery contract 135', 'Milk Powder', 400000, '50% prepayment, fixed 10% discount', '2022-04-24', 2),
+       (5, 'Delivery contract 136', 'Sugar', 500000, '50% prepayment, fixed 10% discount', '2022-05-17', 2);
 
 INSERT INTO payment
-VALUES (1, 1000, '2022-02-02', 1);
-VALUES (2, 2000, '2022-02-22', 1);
-VALUES (3, 3000, '2022-03-03', 1);
-VALUES (4, 4000, '2022-04-02', 2);
-VALUES (5, 5000, '2022-05-02', 3);
+VALUES (1, 10000, '2022-02-02 12:15:13', 1),
+       (2, 20000, '2022-02-22 15:45:40', 1),
+       (3, 30000, '2022-03-03 11:01:12', 1),
+       (4, 40000, '2022-04-02 14:37:02', 2),
+       (5, 50000, '2022-05-02 10:59:01', 3);
