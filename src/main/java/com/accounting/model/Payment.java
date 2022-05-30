@@ -13,7 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @NoArgsConstructor
@@ -28,11 +28,11 @@ public class Payment {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "amount_of_money")
-    private BigDecimal amountOfMoney;
+    @Column(name = "money_amount")
+    private BigDecimal moneyAmount;
 
     @Column(name = "time")
-    private LocalDate time;
+    private LocalDateTime time;
 
     @ManyToOne
     @JoinColumn(name = "contract_id")
@@ -42,7 +42,7 @@ public class Payment {
     public String toString() {
         return "Payment{" +
                 "id=" + id +
-                ", amountOfMoney=" + amountOfMoney +
+                ", moneyAmount=" + moneyAmount +
                 ", time=" + time +
                 ", contract=" + contract.getId() +
                 '}';
@@ -57,11 +57,11 @@ public class Payment {
             return false;
         }
         Payment payment = (Payment) o;
-        return Objects.equals(getId(), payment.getId()) && Objects.equals(getAmountOfMoney(), payment.getAmountOfMoney()) && Objects.equals(getTime(), payment.getTime()) && Objects.equals(getContract(), payment.getContract());
+        return Objects.equals(getId(), payment.getId()) && Objects.equals(getMoneyAmount(), payment.getMoneyAmount()) && Objects.equals(getTime(), payment.getTime()) && Objects.equals(getContract(), payment.getContract());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getAmountOfMoney(), getTime(), getContract());
+        return Objects.hash(getId(), getMoneyAmount(), getTime(), getContract());
     }
 }
